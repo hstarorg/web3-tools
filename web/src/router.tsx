@@ -1,6 +1,7 @@
 import { NavigateOptions, To, createBrowserRouter } from 'react-router-dom';
 import { EventEmitter } from 'events';
 
+import { NotFound } from './pages/errors';
 import { Layout } from './pages/Layout';
 import { default as Home } from './pages/Home';
 
@@ -8,6 +9,7 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       { path: '/', element: <Home /> },
       //   {
