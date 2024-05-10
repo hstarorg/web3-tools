@@ -39,12 +39,12 @@ $ pnpm run test:cov
 
 ## Install tailwind
 
-> https://tailwindcss.com/docs/installation
+> https://tailwindcss.com/docs/guides/vite
 
 ```bash
 # Install and init tailwindcss
-pnpm i -D tailwindcss
-pnpx tailwindcss init
+pnpm i -D tailwindcss postcss autoprefixer
+pnpx tailwindcss init -p
 
 # 2. Configure your template paths in tailwind.config.js
 
