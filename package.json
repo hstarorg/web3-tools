@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "postinstall": "pnpm run web:build",
+    "postinstall": "npm run web:install && npm run web:build",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -20,6 +20,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "web:dev": "cd web && npm run dev",
+    "web:install": "cd web && npm run npmi",
     "web:build": "cd web && npm run build"
   },
   "dependencies": {
