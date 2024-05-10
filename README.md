@@ -37,6 +37,20 @@ $ pnpm run test:cov
 
 # Frontend(/web folder)
 
+## Install tailwind
+
+> https://tailwindcss.com/docs/installation
+
+```bash
+# Install and init tailwindcss
+pnpm i -D tailwindcss
+pnpx tailwindcss init
+
+# 2. Configure your template paths in tailwind.config.js
+
+# 3. Add the Tailwind directives to your CSS
+```
+
 ## Vite Template
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
