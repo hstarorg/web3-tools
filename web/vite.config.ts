@@ -7,4 +7,14 @@ export default defineConfig({
   build: {
     outDir: '../src/web',
   },
+  server: {
+    https: {},
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        // rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 });
