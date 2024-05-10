@@ -1,7 +1,43 @@
 # web3-tools
 A website for many web3 tools.
 
-# About Template
+# Backend(Nest.js)
+
+## Installation
+
+```bash
+$ pnpm install
+```
+
+## Running the app
+
+```bash
+# development
+$ pnpm run start
+
+# watch mode
+$ pnpm run start:dev
+
+# production mode
+$ pnpm run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov
+```
+
+# Frontend(/web folder)
+
+## Vite Template
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
