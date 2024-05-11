@@ -1,21 +1,12 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0);
+export function HomePage() {
+  const navigate = useNavigate();
 
-  return (
-    <div className="w-[600px] mx-auto bg-slate-500">
-      <h1>Good</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    navigate('/tools');
+  }, [navigate]);
+
+  return null;
 }
-
-export default App;

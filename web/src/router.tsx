@@ -1,9 +1,9 @@
-import { NavigateOptions, To, createBrowserRouter } from 'react-router-dom';
-import { EventEmitter } from 'events';
+import { createBrowserRouter } from 'react-router-dom';
 
 import { NotFound } from './pages/errors';
 import { Layout } from './pages/Layout';
-import { default as Home } from './pages/Home';
+import { ToolsLayout } from './pages/tools/Layout';
+import { HomePage } from './pages/Home';
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +11,8 @@ export const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <NotFound />,
     children: [
-      { path: '/', element: <Home /> },
+      { path: '/', element: <HomePage /> },
+      { path: '/tools', element: <ToolsLayout /> },
       //   {
       //     path: '/',
       //     element: <MainLayout />,
@@ -24,11 +25,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-
-export const routerEventBus: EventEmitter & { RouteNavigateEvent?: string } =
-  new EventEmitter();
-routerEventBus.RouteNavigateEvent = 'RouteNavigateEvent';
-
-export function navigateTo(to: To, options?: NavigateOptions) {
-  routerEventBus.emit(routerEventBus.RouteNavigateEvent!, to, options);
-}
