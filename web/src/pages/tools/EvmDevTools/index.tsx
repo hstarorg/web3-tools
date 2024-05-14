@@ -7,7 +7,7 @@ import { GetEvmAddress } from './items/GetEvmAddress';
 export function EvmDevTools() {
   return (
     <div>
-      <div className="grid grid-cols-12 gap-2">
+      <div className="grid grid-cols-12 gap-4">
         <GetEvmAddress className="col-span-6" />
 
         <Card className="col-span-4">
