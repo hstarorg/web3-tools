@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import classnames from 'classnames';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 
 const MenuList: { label: string; key: string; path: string }[] = [
   { label: '交易工具', key: 'tools-exchange', path: '/tools/exchange' },
@@ -9,12 +9,16 @@ const MenuList: { label: string; key: string; path: string }[] = [
 
 export function ToolsLayout() {
   const navigate = useNavigate();
-  const [activedMenu, setActivedMenu] = useState('tools-exchange');
+  const location = useLocation();
+
+  // Calc current menu key by location.path
+  const currentMenuKey = useMemo(() => {
+    return MenuList.find((x) => x.path === location.pathname)?.key || '';
+  }, [location]);
 
   function handleMenuClick(menuKey: string) {
     const path = MenuList.find((x) => x.key === menuKey)?.path;
     if (path) {
-      setActivedMenu(menuKey);
       navigate(path);
     }
   }
@@ -24,16 +28,15 @@ export function ToolsLayout() {
       <div className="w-[200px] absolute top-16 bg-[#f8fafc] bottom-0 overflow-y-auto p-1 pt-2">
         <menu>
           {MenuList.map((x) => {
-            console.log(x.key, activedMenu);
             return (
               <li
                 key={x.key}
                 className={classnames(
                   'cursor-pointer text-base  px-2 py-1 rounded-md',
-                  { 'text-sky-500': x.key === activedMenu },
+                  { 'text-sky-500': x.key === currentMenuKey },
                   {
                     'text-slate-500 hover:text-slate-600':
-                      x.key !== activedMenu,
+                      x.key !== currentMenuKey,
                   },
                 )}
                 onClick={() => handleMenuClick(x.key)}
