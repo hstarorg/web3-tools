@@ -51,10 +51,20 @@ pnpx tailwindcss init -p
 # 3. Add the Tailwind directives to your CSS
 ```
 
-## Install shadcn-ui
+## shadcn-ui
 ```bash
+# Install
 pnpx shadcn-ui@latest init 
+
+# Add Component
+pnpm shadcn-ui@latest add card
+# or
+pnpm add-c <component name>
 ```
+
+## Icons
+
+* https://lucide.dev/icons
 
 ## Vite Template
 
