@@ -51,6 +51,11 @@ pnpx tailwindcss init -p
 # 3. Add the Tailwind directives to your CSS
 ```
 
+## Install shadcn-ui
+```bash
+pnpx shadcn-ui@latest init 
+```
+
 ## Vite Template
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
