@@ -1,27 +1,30 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { NotFound } from './pages/errors';
+import { ErrorBoundary, NotFound } from './pages/errors';
 import { Layout } from './pages/Layout';
-import { ToolsLayout } from './pages/tools/Layout';
 import { HomePage } from './pages/Home';
+
+import { ToolsLayout } from './pages/tools/Layout';
+import { ExchangeTools } from './pages/tools/ExchangeTools';
+import { EvmDevTools } from './pages/tools/EvmDevTools';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <NotFound />,
+    errorElement: <ErrorBoundary />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path: '/tools', element: <ToolsLayout /> },
-      //   {
-      //     path: '/',
-      //     element: <MainLayout />,
-      //     children: [
-      //       { path: '/', element: <MainPage /> },
-      //       { path: '/kbs', element: <KbsPage /> },
-      //       { path: '/apps', element: <AppsPage /> },
-      //     ],
-      //   },
+      {
+        path: '/tools',
+        element: <ToolsLayout />,
+        children: [
+          { path: '/tools/exchange', element: <ExchangeTools /> },
+          { path: '/tools/evmdev', element: <EvmDevTools /> },
+          { path: '*', element: <NotFound /> },
+        ],
+      },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ]);
