@@ -1,0 +1,16 @@
+{
+  "short_name": "Web3Tools",
+  "name": "Web3 Tools App",
+  "description": "Web3 Tools App",
+  "icons": [
+    {
+      "src": "wt-logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
