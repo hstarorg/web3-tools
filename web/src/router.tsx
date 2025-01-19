@@ -8,6 +8,7 @@ import { ToolsLayout } from './pages/tools/Layout';
 import { ToolsHome } from './pages/tools/ToolsHome';
 import { ExchangeTools } from './pages/tools/ExchangeTools';
 import { EvmDevTools } from './pages/tools/EvmDevTools';
+import { SafeTx } from './pages/SafeTx';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorBoundary />,
     children: [
       { path: '/', element: <HomePage /> },
+      { path: '/safe-tx', element: <SafeTx /> },
       {
         path: '/tools',
         element: <ToolsLayout />,

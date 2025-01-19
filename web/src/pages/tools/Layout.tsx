@@ -5,6 +5,7 @@ import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 const MenuList: { label: string; key: string; path: string }[] = [
   { label: '交易工具', key: 'tools-exchange', path: '/tools/exchange' },
   { label: 'EVM 开发者工具', key: 'tools-evmdev', path: '/tools/evmdev' },
+  { label: 'Safe', key: 'safe', path: '/safe-tx' },
 ];
 
 export function ToolsLayout() {
