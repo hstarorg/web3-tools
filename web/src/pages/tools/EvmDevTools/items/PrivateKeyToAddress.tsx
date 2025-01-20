@@ -1,8 +1,4 @@
-import { getAddress } from 'viem';
-import { ChangeEvent, useState } from 'react';
-import { toast } from 'sonner';
 import { Wallet, Copy } from 'lucide-react';
-import { copyText } from '@bizjs/biz-utils';
 
 import { Button } from '@/components/ui/button';
 import {
